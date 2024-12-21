@@ -12,10 +12,10 @@
 
     <div class="col">
         <div>
-            <h3>Добро пожаловать в колонию, @Model.User.UserName</h3>
-            <h4>У тебя уже накоплено <span id="current_score">@Model.User.CurrentScore</span> кусков руды</h4>
-            <h4>Всего ты добыл <span id="record_score">@Model.User.RecordScore</span> кусков руды</h4>
-            <h4>С одного удара киркой ты добываешь <span id="profit_per_click">@Model.User.ProfitPerClick</span> кусков</h4>
+            <h3>Добро пожаловать в Sims Clicker, @Model.User.UserName</h3>
+            <h4>У вас уже накоплено <span id="current_score">@Model.User.CurrentScore</span> симолеонов </h4>
+            <h4>Всего вы имеете <span id="record_score">@Model.User.RecordScore</span> симолеонов</h4>
+            <h4>С одного клика вы получаете <span id="profit_per_click">@Model.User.ProfitPerClick</span> симолеонов</h4>
             <h4>Твои подчиненные ежесекундно добывают <span id="profit_per_second">@Model.User.ProfitPerSecond</span> кусков</h4>
         </div>
     </div>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="col">
-        <h3>Бусты</h3>
+        <h3>Улучшения</h3>
         <div class="d-flex">
             @foreach (var boost in Model.Boosts)
             {
@@ -36,7 +36,7 @@
                 var price = userBoost?.CurrentPrice ?? boost.Price;
                 var quantity = userBoost?.Quantity ?? 0;
 
-                <button class="boost-button border-0 bg-secondary m-3">
+                <button class="boost-button border-0 m-3">
                     <span class="boost-id" hidden>@boost.Id</span>
                     <h4>@boost.Title</h4>
                     <img src="data:image/png;base64, @Convert.ToBase64String(boost.Image)" height="100" />
